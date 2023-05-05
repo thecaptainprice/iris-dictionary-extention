@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "IRIS Dictionary",
+  "description": "IRIS Dictionary is a language learning tool that offers both translation and flashcard features. With IRIS Dictionary, users can easily translate words and phrases from one language to another and save them as flashcards for later review. Whether you're a beginner or an advanced learner, IRIS Dictionary is a great way to build your vocabulary and improve your language skills.",
+  "version": "1.0.1",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "host_permissions": ["http://*/*", "https://*/*", "*://*/*"]
+}
