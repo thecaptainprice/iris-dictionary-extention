@@ -12,7 +12,7 @@
     "48": "assets/icon/favicon-48x48.png"
   },
   "background": {
-    "background.service_worker": "background.js"
+    "background.service_worker": "/background.js"
   },
   "permissions": ["storage", "tabs", "favicon", "idle"],
   "content_security_policy": {
@@ -29,7 +29,7 @@
     {
       "matches": ["http://*/*", "https://*/*", "*://*/*"],
       "css": ["styles.css"],
-      "js": ["content-script.js"],
+      "js": ["/content-script.js"],
       "all_frames": true
     }
   ]
