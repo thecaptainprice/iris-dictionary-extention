@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'iris-dictionary-extention';
   closeExtension(): void {
-    chrome.runtime.sendMessage({ type: 'close_extension' });
+    chrome.runtime.sendMessage({ type: 'closeExtension' });
   }
 }

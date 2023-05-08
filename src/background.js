@@ -24,14 +24,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   }
 });
 
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  if (request.type === 'close_extension') {
-    chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
-      console.log("==================")
-      chrome.tabs.remove(tabs[0].id);
-    });
-  }
-});
 
 chrome.idle.onStateChanged.addListener(
   (browserActivityState) => {
