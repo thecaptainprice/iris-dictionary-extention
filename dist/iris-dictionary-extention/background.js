@@ -1,3 +1,14 @@
+chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+  var port = chrome.tabs.connect(tabs[0].id);
+  port.postMessage({ function: 'html' });
+  port.onMessage.addListener(function (response) {
+    var html = response.html;
+    var title = response.title;
+    var description = response.description;
+  });
+});
+
+
 chrome.runtime.onInstalled.addListener(function () {
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
     chrome.declarativeContent.onPageChanged.addRules([{
@@ -9,10 +20,6 @@ chrome.runtime.onInstalled.addListener(function () {
       actions: [new chrome.declarativeContent.ShowPageAction()]
     }]);
   });
-});
-
-chrome.alarms.onAlarm.addListener((alarm) => {
-  console.warn('Found chrome alarm! >>> ', alarm);
 });
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
@@ -35,3 +42,9 @@ chrome.idle.onStateChanged.addListener(
     });
   }
 )
+
+function test(params) {
+  console.log("MRM")
+}
+
+test()
